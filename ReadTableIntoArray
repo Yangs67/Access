@@ -1,0 +1,15 @@
+Sub ReadTableIntoArray
+	Dim rstData As DAO.Recordset
+	Dim v As Variant
+	Dim i As Integer
+	
+'''Read data from [#TableName#] into array 'v'
+	Set rstData = CurrentDb.OpenRecordset("#TableName#")
+	rstData.MoveLast
+	rstData.MoveFirst
+	v = rstData.GetRows(rstData.RecordCount)
+	
+'''After use
+	rstData.Close
+	
+End Sub

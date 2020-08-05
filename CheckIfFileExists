@@ -1,0 +1,8 @@
+Dim direcory As String
+direcory = #Full Path of the target file#
+
+If Dir(directory, vbDirectory) <> "" Then
+    '''Code here for case that file exists
+Else
+    '''Code here for case that file doesn't exist
+End If

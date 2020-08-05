@@ -1,0 +1,1 @@
+CurrentDb.Execute "UPDATE #TableName# SET [#FieldName#]" & #Variable# & WHERE [#FieldName#] = '" & #Variable# & "'"

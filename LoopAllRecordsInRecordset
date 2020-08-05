@@ -1,0 +1,20 @@
+Me.Dirty=False
+Dim db As DAO.Database
+Dim rs As DAO.Recordset
+
+Set db = CurrentDb
+Set rs = db.OpenRecordset("#TableName#")
+
+'''Populate the table
+rs.MoveLast
+rs.MoveFirst
+Do While Not rs.EOF '''While not at the last record, For every record in the table
+  rs.Edit '''make table editable
+  
+  rs.Update '''Save changes made to the record
+  rs.MoveNext '''Go to the next record in the table
+Loop
+
+'''After use
+
+rs.Close
